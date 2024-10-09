@@ -5,7 +5,6 @@ public class Bankomat {
 
         Scanner scanner = new Scanner(System.in);
 
-
         boolean isFinished = false;
         int kontostand = 0;
 
