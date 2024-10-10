@@ -17,6 +17,12 @@ public class WoerterRaten {
         boolean isFinished = false;
         int randomNum = random.nextInt(words.length);
         List<String> foundLetters = new ArrayList<String>();
+        for (int i = 0; i < words[randomNum].length() ; i++) {
+            System.out.print("_ ");
+
+        }
+
+        System.out.println();
 
         while (!isFinished){
 
@@ -24,9 +30,11 @@ public class WoerterRaten {
             String selectedLetter = scanner.next();
 
             if (containsLetter(words[randomNum],selectedLetter)){
-                System.out.println("true");
+
                 foundLetters.add(selectedLetter);
             }
+
+
             printHiddenWord(words[randomNum],foundLetters);
 
 
@@ -56,5 +64,9 @@ public class WoerterRaten {
             System.out.print(" "); // Add space for better readability
         }
         System.out.println(); // Move to the next line after printing the word
+
+
     }
+
 }
+

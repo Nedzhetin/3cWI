@@ -34,14 +34,14 @@ public class Bankomat {
                 }
             }
             if (selection == 2){
-                System.out.println("Wie viel Geld möchten Sie Abheben?");
+                System.out.println("Wie viel Geld möchten Sie Abhe  ben?");
 
                 if (scanner.hasNextInt()){
                     int  abheben = scanner.nextInt();
                     kontostand = kontostand  - abheben;
                 }else {
                     System.out.println("Die Eingabe ist ungültig");
-                    scanner.next(); // Clear the invalid input
+                    scanner.next(); // Clear the        invalid input
                 }
 
             }
