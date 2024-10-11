@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class StringHelper {
     public static void main(String[] args) {
@@ -16,6 +14,11 @@ public class StringHelper {
             int selection = scanner.nextInt();
 
 
+            if (selection == 1) {
+                String word = scanner.next();
+                System.out.println(isPalindrone(word));
+            }
+
             if (selection == 2) {
                 String word = scanner.next();
                 System.out.println(countLetters(word));
@@ -28,11 +31,29 @@ public class StringHelper {
 
             if (selection == 4) {
                 String word = scanner.next();
-                System.out.println(printAmoutOfLetters(word));
+                System.out.println(printAmountOfLetters(word));
             }
 
         }
 
+    }
+
+    public static boolean isPalindrone(String word) {
+        List<Character> letters = new ArrayList<>();
+        char ch;
+        String rvsWord = "";
+
+        for (int i = 0; i < word.length(); i++) {
+            ch = word.charAt(i);
+            rvsWord = ch + rvsWord;
+        }
+        System.out.println(rvsWord);
+
+        if (word.equals(rvsWord)) {
+            return true;
+        }else {
+            return false;
+        }
     }
 
     public static int countLetters(String word) {
@@ -51,16 +72,32 @@ public class StringHelper {
         return rvsWord;
     }
 
-    public static String printAmoutOfLetters(String word) {
-        char ch;
-        List letters = new ArrayList();
-        for (int i = 0; i < word.length(); i++) {
-            ch = word.charAt(i);
-            letters.add(ch);
-            System.out.println(ch + ":");
+    public static String printAmountOfLetters(String word) {
+        List<Character> letters = new ArrayList<>();
+        List<Integer> counts = new ArrayList<>();
 
+
+        for (int i = 0; i < word.length(); i++) {
+            char ch = word.charAt(i);
+            int index = letters.indexOf(ch);
+
+
+            if (index != -1) {
+                counts.set(index, counts.get(index) + 1);
+            } else {
+
+                letters.add(ch);
+                counts.add(1);
+            }
         }
-        System.out.println(letters);
-        return "";
+
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < letters.size(); i++) {
+            result.append(letters.get(i)).append(": ").append(counts.get(i)).append(", \n");
+        }
+
+
+        //System.out.println(counts);
+        return result.toString();
     }
 }
