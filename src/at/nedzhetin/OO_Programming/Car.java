@@ -12,4 +12,19 @@ public void drive() {
 
    System.out.println( "Driving");
 }
+
+public void turboBoost(){
+   if (this.fuelAmount > 10){
+      System.out.println( "TurboBoost activated");
+   }else {
+      System.out.println( "TurboBoost not available. Not enough fuel");
+   }
+   }
+
+   public void honk(int times){
+   for (int i = 0; i < times; i++){
+      System.out.println("Tuuut");
+   }
+   }
+
 }

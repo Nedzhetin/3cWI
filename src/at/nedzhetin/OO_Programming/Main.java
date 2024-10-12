@@ -9,7 +9,7 @@ public class Main {
         c1.brand = "BMW";
         c1.color = "red";
         c1.fuelConsumption = 10;
-        c1.fuelAmount = 100;
+        c1.fuelAmount = 15;
         c1.serialNumber = "123456";
 
         c2.brand = "Audi";
@@ -19,7 +19,10 @@ public class Main {
         c2.serialNumber = "654321";
 
         c1.drive();
-        System.out.println(c1.fuelAmount);
+        c1.turboBoost();
+        c1.honk(3);
+
+
 
 
     }
