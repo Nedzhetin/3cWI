@@ -1,11 +1,11 @@
 package at.nedzhetin.OO_Programming;
 
 public class Car {
-   public String brand;
-   public String color;
-   public int fuelConsumption;
-   public int fuelAmount;
-   public  String serialNumber;
+   private String brand;
+   private String color;
+   private int fuelConsumption;
+   private int fuelAmount;
+   private  String serialNumber;
 
    public Car(String brand, String color, int fuelConsumption, int fuelAmount, String serialNumber) {
       this.brand = brand;
