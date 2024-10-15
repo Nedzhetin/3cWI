@@ -3,24 +3,19 @@ import at.nedzhetin.OO_Programming.Car;
 
 public class Main {
     public static void main(String[] args) {
-        Car c1 = new Car();
+        Car c1 = new Car("BMW","red", 10, 5, "123456");
+        Car c2 = new Car("Audi", "blue", 5,5, "654321");
+
         Car c2 = new Car();
 
-        c1.brand = "BMW";
-        c1.color = "red";
-        c1.fuelConsumption = 10;
-        c1.fuelAmount = 15;
-        c1.serialNumber = "123456";
+        System.out.println(c1.getBrand());
 
-        c2.brand = "Audi";
-        c2.color = "blue";
-        c2.fuelConsumption = 5;
-        c2.fuelAmount = 5;
-        c2.serialNumber = "654321";
 
         c1.drive();
-        c1.turboBoost();
-        c1.honk(3);
+        c1.getRemainingRange();
+
+        //  c1.turboBoost();
+        // c1.honk(5);
 
 
 
