@@ -6,7 +6,6 @@ public class Main {
         Car c1 = new Car("BMW","red", 10, 5, "123456");
         Car c2 = new Car("Audi", "blue", 5,5, "654321");
 
-        Car c2 = new Car();
 
         System.out.println(c1.getBrand());
 
