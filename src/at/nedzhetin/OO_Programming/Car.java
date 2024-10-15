@@ -64,29 +64,32 @@ public class Car {
    this.fuelAmount = this.fuelAmount - this.fuelConsumption;
 
    if ( this.fuelAmount < 0){
-      System.out.println("not enough fuel");
+      System.out.println("\nnot enough fuel\n");
    }else {
-      System.out.println("Driving (1km)");
+      System.out.println("\nDriving (1km)\n");
    }
 }
 
 public void getRemainingRange(){
    int ramainingRange = this.fuelAmount/this.fuelConsumption;
-   System.out.println( "Remaining range: " + ramainingRange + "km");
+   System.out.println( "\nRemaining range: " + ramainingRange + "km\n");
 }
 
 public void turboBoost(){
    if (this.fuelAmount > 10){
-      System.out.println( "TurboBoost activated");
+      System.out.println( "\nTurboBoost activated\n");
    }else {
-      System.out.println( "TurboBoost not available. Not enough fuel");
+      System.out.println( "\nTurboBoost not available. Not enough fuel\n");
    }
    }
 
    public void honk(int times){
+      System.out.println("");
    for (int i = 0; i < times; i++){
       System.out.println("Tuuut");
    }
+      System.out.println("");
    }
+
 
 }
