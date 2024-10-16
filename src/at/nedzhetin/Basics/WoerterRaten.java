@@ -57,13 +57,13 @@ public class WoerterRaten {
         for (int i = 0; i < word.length(); i++) {
             String currentLetter = String.valueOf(word.charAt(i));
             if (foundLetters.contains(currentLetter)) {
-                System.out.print(currentLetter); // Print the letter if it has been guessed
+                System.out.print(currentLetter);
             } else {
-                System.out.print("_"); // Print an underscore if the letter hasn't been guessed
+                System.out.print("_");
             }
-            System.out.print(" "); // Add space for better readability
+            System.out.print(" ");
         }
-        System.out.println(); // Move to the next line after printing the word
+        System.out.println();
 
 
     }

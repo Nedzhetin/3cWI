@@ -1,4 +1,5 @@
 package at.nedzhetin.OO_Programming;
+
 import at.nedzhetin.OO_Programming.Car;
 
 import java.util.Scanner;
@@ -6,14 +7,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Car c1 = new Car("...", "...", 0, 0, "...");
+        Car c1 = null;
 
         Scanner scanner = new Scanner(System.in);
         boolean isFinished = false;
 
 
-        while (!isFinished){
-            System.out.println("1.New Car");
+        while (!isFinished) {
+
+            System.out.println("\n1.New Car");
             System.out.println("2.Drive");
             System.out.println("3.TurboBoost");
             System.out.println("4.Honk");
@@ -21,7 +23,7 @@ public class Main {
             System.out.println("6.Quit");
             int selection = scanner.nextInt();
 
-            if (selection == 1){
+            if (selection == 1) {
                 System.out.println("Brand:");
                 String newBrand = scanner.next();
                 System.out.println("Color:");
@@ -31,35 +33,52 @@ public class Main {
                 System.out.println("fuel Amount:");
                 int newFuelAmount = scanner.nextInt();
                 System.out.println("Serial Number:");
-                String serialNumber = scanner.next();
+                String newSerialNumber = scanner.next();
+                c1 = new Car(newBrand, newColor, newFuelConsumption, newFuelAmount,newSerialNumber);
 
-                c1.setBrand(newBrand);
-                c1.setColor(newColor);
-                c1.setFuelConsumption(newFuelConsumption);
-                c1.setFuelAmount(newFuelAmount);
-                c1.setSerialNumber(serialNumber);
 
             }
 
-            if (selection == 2){
-                c1.drive();
+            if (selection == 2) {
+                if (c1 != null) {
+                    c1.drive();
+                }else{
+                    System.out.println("you dont have a car");
+                }
+
             }
-            if (selection == 3){
-                c1.turboBoost();
+            if (selection == 3) {
+                if (c1 != null){
+                    c1.turboBoost();
+                }else{
+                    System.out.println("you dont have a car");
+                }
+
             }
-            if (selection == 4){
-                c1.honk(3);
+            if (selection == 4) {
+                if (c1 != null){
+                    c1.honk(3);
+                }else{
+                    System.out.println("you dont have a car");
+                }
+
             }
 
-            if(selection == 5){
-                System.out.println("Brand:            " + c1.getBrand());
-                System.out.println("Color:            " + c1.getColor());
-                System.out.println("Fuel consumption: " + c1.getFuelConsumption());
-                System.out.println("Fuel amount:      " + c1.getFuelAmount());
-                System.out.println("Serial number:    " + c1.getSerialNumber());
-                System.out.println("");
+            if (selection == 5) {
+                if (c1 != null){
+                    System.out.println("Brand:            " + c1.getBrand());
+                    System.out.println("Color:            " + c1.getColor());
+                    System.out.println("Fuel consumption: " + c1.getFuelConsumption());
+                    System.out.println("Fuel amount:      " + c1.getFuelAmount());
+                    System.out.println("Serial number:    " + c1.getSerialNumber());
+                    System.out.println("");
+                }else{
+                    System.out.println("you dont have a car");
+                }
+
+
             }
-            if (selection == 6){
+            if (selection == 6) {
                 isFinished = true;
             }
         }
@@ -67,3 +86,5 @@ public class Main {
 
     }
 }
+
+

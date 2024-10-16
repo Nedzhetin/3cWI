@@ -7,6 +7,11 @@ public class Car {
    private int fuelAmount;
    private  String serialNumber;
 
+
+   public Car()   {
+
+
+   }
    public Car(String brand, String color, int fuelConsumption, int fuelAmount, String serialNumber) {
       this.brand = brand;
       this.color = color;
@@ -15,6 +20,8 @@ public class Car {
       this.serialNumber = serialNumber;
    }
 
+
+
    public String getBrand() {
       return brand;
    }
@@ -22,6 +29,8 @@ public class Car {
    public void setBrand(String brand) {
       this.brand = brand;
    }
+
+
 
 
    public String getColor() {
@@ -33,6 +42,9 @@ public class Car {
    }
 
 
+
+
+
    public int getFuelConsumption() {
       return fuelConsumption;
    }
@@ -40,6 +52,9 @@ public class Car {
    public void setFuelConsumption(int fuelConsumption) {
       this.fuelConsumption = fuelConsumption;
    }
+
+
+
 
 
    public int getFuelAmount() {
@@ -51,6 +66,9 @@ public class Car {
    }
 
 
+
+
+
    public String getSerialNumber() {
       return serialNumber;
    }
@@ -58,6 +76,9 @@ public class Car {
    public void setSerialNumber(String serialNumber) {
       this.serialNumber = serialNumber;
    }
+
+
+
 
 
    public void drive() {
