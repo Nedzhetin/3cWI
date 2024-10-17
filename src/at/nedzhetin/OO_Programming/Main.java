@@ -15,26 +15,37 @@ public class Main {
 
         while (!isFinished) {
 
-            System.out.println("\n1.New Car");
-            System.out.println("2.Drive");
-            System.out.println("3.TurboBoost");
-            System.out.println("4.Honk");
-            System.out.println("5.Give car info");
-            System.out.println("6.Quit");
+            System.out.print("\n1.New Car            ");
+            System.out.print("2.Drive           ");
+            System.out.print("3.getRemainingRange        ");
+            System.out.print("4.Honk             ");
+            System.out.print("5.Give car info             ");
+            System.out.print("6.Quit            ");
             int selection = scanner.nextInt();
 
             if (selection == 1) {
+                c1 = new Car();
                 System.out.println("Brand:");
                 String newBrand = scanner.next();
+                c1.setBrand(newBrand);
+
                 System.out.println("Color:");
                 String newColor = scanner.next();
+                c1.setColor(newColor);
+
                 System.out.println("fuel consumption:");
                 int newFuelConsumption = scanner.nextInt();
+                c1.setFuelConsumption(newFuelConsumption);
+
                 System.out.println("fuel Amount:");
                 int newFuelAmount = scanner.nextInt();
+                c1.setFuelAmount(newFuelAmount);
+
                 System.out.println("Serial Number:");
                 String newSerialNumber = scanner.next();
-                c1 = new Car(newBrand, newColor, newFuelConsumption, newFuelAmount,newSerialNumber);
+                c1.setSerialNumber(newSerialNumber);
+
+
 
 
             }
@@ -49,7 +60,7 @@ public class Main {
             }
             if (selection == 3) {
                 if (c1 != null){
-                    c1.turboBoost();
+                    c1.getRemainingRange();
                 }else{
                     System.out.println("you dont have a car");
                 }

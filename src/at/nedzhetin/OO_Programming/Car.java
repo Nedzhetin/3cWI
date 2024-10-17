@@ -62,7 +62,14 @@ public class Car {
    }
 
    public void setFuelAmount(int fuelAmount) {
-      this.fuelAmount = fuelAmount;
+      if (fuelAmount < 0){
+         System.out.println("not a valid fuel amount\n");
+      } else if (fuelAmount > 100) {
+         System.out.println("not a valid fuel amount\n");
+      }else {
+         this.fuelAmount = fuelAmount;
+
+      }
    }
 
 
