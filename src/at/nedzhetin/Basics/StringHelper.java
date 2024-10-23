@@ -77,6 +77,7 @@ public class StringHelper {
         List<Integer> counts = new ArrayList<>();
 
 
+
         for (int i = 0; i < word.length(); i++) {
             char ch = word.charAt(i);
             int index = letters.indexOf(ch);

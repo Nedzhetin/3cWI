@@ -20,5 +20,9 @@ public class IfBedingungen_A1 {
         // Wenn die Zahl zw. 20 und 50 ist gib aus "Medium"
         // Wenn die Zahl größer als 50 ist gib aus "Large"
 
+
+        char letter = 'a';
+        char result = (char) (letter + 2);
+        System.out.println(result);
     }
 }
