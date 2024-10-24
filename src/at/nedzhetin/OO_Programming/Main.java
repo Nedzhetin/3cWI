@@ -33,13 +33,6 @@ public class Main {
                 String newColor = scanner.next();
                 c1.setColor(newColor);
 
-                System.out.println("fuel consumption:");
-                int newFuelConsumption = scanner.nextInt();
-                c1.setFuelConsumption(newFuelConsumption);
-
-                System.out.println("fuel Amount:");
-                int newFuelAmount = scanner.nextInt();
-                c1.setFuelAmount(newFuelAmount);
 
                 System.out.println("Serial Number:");
                 String newSerialNumber = scanner.next();
@@ -79,8 +72,6 @@ public class Main {
                 if (c1 != null){
                     System.out.println("Brand:            " + c1.getBrand());
                     System.out.println("Color:            " + c1.getColor());
-                    System.out.println("Fuel consumption: " + c1.getFuelConsumption());
-                    System.out.println("Fuel amount:      " + c1.getFuelAmount());
                     System.out.println("Serial number:    " + c1.getSerialNumber());
                     System.out.println("");
                 }else{

@@ -1,25 +1,24 @@
 package at.nedzhetin.OO_Programming;
 
 public class Car {
+   private Engine engine;
    private String brand;
    private String color;
-   private int fuelConsumption;
-   private int fuelAmount;
-   private  String serialNumber;
+   private String serialNumber;
 
 
-   public Car()   {
+   public Car() {
 
 
    }
-   public Car(String brand, String color, int fuelConsumption, int fuelAmount, String serialNumber) {
+
+   public Car(String brand, String color, String serialNumber, Engine engine) {
       this.brand = brand;
       this.color = color;
-      this.fuelConsumption = fuelConsumption;
-      this.fuelAmount = fuelAmount;
+      this.engine = engine;
+
       this.serialNumber = serialNumber;
    }
-
 
 
    public String getBrand() {
@@ -31,8 +30,6 @@ public class Car {
    }
 
 
-
-
    public String getColor() {
       return color;
    }
@@ -42,39 +39,13 @@ public class Car {
    }
 
 
-
-
-
-   public int getFuelConsumption() {
-      return fuelConsumption;
+   public Engine getEngine() {
+      return engine;
    }
 
-   public void setFuelConsumption(int fuelConsumption) {
-      this.fuelConsumption = fuelConsumption;
+   public void setEngine(Engine engine) {
+      this.engine = engine;
    }
-
-
-
-
-
-   public int getFuelAmount() {
-      return fuelAmount;
-   }
-
-   public void setFuelAmount(int fuelAmount) {
-      if (fuelAmount < 0){
-         System.out.println("not a valid fuel amount\n");
-      } else if (fuelAmount > 100) {
-         System.out.println("not a valid fuel amount\n");
-      }else {
-         this.fuelAmount = fuelAmount;
-
-      }
-   }
-
-
-
-
 
    public String getSerialNumber() {
       return serialNumber;
@@ -85,37 +56,29 @@ public class Car {
    }
 
 
-
-
-
    public void drive() {
-   this.fuelAmount = this.fuelAmount - this.fuelConsumption;
 
-   if ( this.fuelAmount < 0){
-      System.out.println("\nnot enough fuel\n");
-   }else {
-      System.out.println("\nDriving (1km)\n");
-   }
-}
-
-public void getRemainingRange(){
-   int ramainingRange = this.fuelAmount/this.fuelConsumption;
-   System.out.println( "\nRemaining range: " + ramainingRange + "km\n");
-}
-
-public void turboBoost(){
-   if (this.fuelAmount > 10){
-      System.out.println( "\nTurboBoost activated\n");
-   }else {
-      System.out.println( "\nTurboBoost not available. Not enough fuel\n");
-   }
    }
 
-   public void honk(int times){
+
+   public void getRemainingRange() {
+      int ramainingRange = this.engine.getFuelAmount() / this.engine.getFuelComsuption();
+      System.out.println("\nRemaining range: " + ramainingRange + "km\n");
+   }
+
+   public void turboBoost() {
+      if (this.engine.getFuelAmount() > 10) {
+         System.out.println("\nTurboBoost activated\n");
+      } else {
+         System.out.println("\nTurboBoost not available. Not enough fuel\n");
+      }
+   }
+
+   public void honk(int times) {
       System.out.println("");
-   for (int i = 0; i < times; i++){
-      System.out.println("Tuuut");
-   }
+      for (int i = 0; i < times; i++) {
+         System.out.println("Tuuut");
+      }
       System.out.println("");
    }
 
