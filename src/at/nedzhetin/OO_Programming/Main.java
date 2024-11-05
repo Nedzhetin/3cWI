@@ -1,10 +1,13 @@
 package at.nedzhetin.OO_Programming;
-
 import at.nedzhetin.OO_Programming.Car;
-
 import java.util.Scanner;
 
+
+
+
 public class Main {
+
+
     public static void main(String[] args) {
 
         Car c1 = null;
@@ -20,7 +23,8 @@ public class Main {
             System.out.print("3.getRemainingRange        ");
             System.out.print("4.Honk             ");
             System.out.print("5.Give car info             ");
-            System.out.print("6.Quit            ");
+            System.out.print("6.Give Engine info             ");
+            System.out.print("7.Quit            ");
             int selection = scanner.nextInt();
 
             if (selection == 1) {
@@ -38,6 +42,8 @@ public class Main {
                 String newSerialNumber = scanner.next();
                 c1.setSerialNumber(newSerialNumber);
 
+                c1.setEngine(new Engine());
+
 
 
 
@@ -45,7 +51,7 @@ public class Main {
 
             if (selection == 2) {
                 if (c1 != null) {
-                    c1.drive();
+                    c1.getEngine().drive();
                 }else{
                     System.out.println("you dont have a car");
                 }
@@ -70,17 +76,23 @@ public class Main {
 
             if (selection == 5) {
                 if (c1 != null){
-                    System.out.println("Brand:            " + c1.getBrand());
-                    System.out.println("Color:            " + c1.getColor());
-                    System.out.println("Serial number:    " + c1.getSerialNumber());
-                    System.out.println("");
+                    c1.giveCarInfo();
                 }else{
                     System.out.println("you dont have a car");
                 }
 
 
             }
+
             if (selection == 6) {
+                if (c1 != null) {
+                  c1.getEngine().giveEngineInfo();
+                } else {
+                    System.out.println("you don't have a car");
+                }
+
+            }
+            if (selection == 7) {
                 isFinished = true;
             }
         }

@@ -12,11 +12,12 @@ public class Car {
 
    }
 
+
+
    public Car(String brand, String color, String serialNumber, Engine engine) {
       this.brand = brand;
       this.color = color;
       this.engine = engine;
-
       this.serialNumber = serialNumber;
    }
 
@@ -56,23 +57,23 @@ public class Car {
    }
 
 
-   public void drive() {
-
+   public void giveCarInfo() {
+      System.out.println("Brand:            " + getBrand());
+      System.out.println("Color:            " + getColor());
+      System.out.println("Serial number:    " + getSerialNumber());
+      System.out.println("");
    }
+
+
+
 
 
    public void getRemainingRange() {
-      int ramainingRange = this.engine.getFuelAmount() / this.engine.getFuelComsuption();
+      int ramainingRange = this.engine.getFuelAmount()/ this.engine.getFuelComsuption();
       System.out.println("\nRemaining range: " + ramainingRange + "km\n");
    }
 
-   public void turboBoost() {
-      if (this.engine.getFuelAmount() > 10) {
-         System.out.println("\nTurboBoost activated\n");
-      } else {
-         System.out.println("\nTurboBoost not available. Not enough fuel\n");
-      }
-   }
+
 
    public void honk(int times) {
       System.out.println("");
