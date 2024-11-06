@@ -1,12 +1,7 @@
 package at.nedzhetin.OO_Programming;
-import at.nedzhetin.OO_Programming.Car;
 import java.util.Scanner;
 
-
-
-
 public class Main {
-
 
     public static void main(String[] args) {
 
@@ -18,13 +13,13 @@ public class Main {
 
         while (!isFinished) {
 
-            System.out.print("\n1.New Car            ");
-            System.out.print("2.Drive           ");
-            System.out.print("3.getRemainingRange        ");
-            System.out.print("4.Honk             ");
-            System.out.print("5.Give car info             ");
-            System.out.print("6.Give Engine info             ");
-            System.out.print("7.Quit            ");
+            System.out.print("\n1.New\t\t");
+            System.out.print("2.Drive\t\t");
+            System.out.print("3.getRemainingRange\t\t");
+            System.out.print("4.Honk\t\t");
+            System.out.print("5.Give car info\t\t");
+            System.out.print("6.Give Engine info\t\t");
+            System.out.print("7.Quit\t\t");
             int selection = scanner.nextInt();
 
             if (selection == 1) {
