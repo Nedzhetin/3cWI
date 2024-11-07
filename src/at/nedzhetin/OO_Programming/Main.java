@@ -1,4 +1,6 @@
 package at.nedzhetin.OO_Programming;
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 public class Main {
@@ -6,14 +8,17 @@ public class Main {
     public static void main(String[] args) {
 
         Car c1 = null;
+        Driver d1 = new Driver("Nejo", 18, "Man");
+
 
         Scanner scanner = new Scanner(System.in);
         boolean isFinished = false;
 
 
+
         while (!isFinished) {
 
-            System.out.print("\n1.New\t\t");
+            System.out.print("\n1.New Car\t\t");
             System.out.print("2.Drive\t\t");
             System.out.print("3.getRemainingRange\t\t");
             System.out.print("4.Honk\t\t");
@@ -37,14 +42,16 @@ public class Main {
                 String newSerialNumber = scanner.next();
                 c1.setSerialNumber(newSerialNumber);
 
+                c1.setDriver(d1);
                 c1.setEngine(new Engine());
-
-
+                d1.pushCar(c1);
+                System.out.println(d1.getCars());
 
 
             }
 
             if (selection == 2) {
+
                 if (c1 != null) {
                     c1.getEngine().drive();
                 }else{

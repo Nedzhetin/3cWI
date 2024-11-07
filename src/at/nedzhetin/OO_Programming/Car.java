@@ -2,9 +2,12 @@ package at.nedzhetin.OO_Programming;
 
 public class Car {
    private Engine engine;
+   private Driver driver;
    private String brand;
    private String color;
    private String serialNumber;
+
+
 
 
    public Car() {
@@ -14,12 +17,15 @@ public class Car {
 
 
 
-   public Car(String brand, String color, String serialNumber, Engine engine) {
+   public Car(String brand, String color, String serialNumber, Engine engine, Driver driver) {
       this.brand = brand;
       this.color = color;
       this.engine = engine;
       this.serialNumber = serialNumber;
+      this.driver = driver;
    }
+
+
 
 
    public String getBrand() {
@@ -48,6 +54,13 @@ public class Car {
       this.engine = engine;
    }
 
+   public Driver getDriver() {
+      return driver;
+   }
+   public void setDriver(Driver driver) {
+      this.driver = driver;
+   }
+
    public String getSerialNumber() {
       return serialNumber;
    }
@@ -55,6 +68,7 @@ public class Car {
    public void setSerialNumber(String serialNumber) {
       this.serialNumber = serialNumber;
    }
+
 
 
    public void giveCarInfo() {
@@ -81,6 +95,11 @@ public class Car {
          System.out.println("Tuuut");
       }
       System.out.println("");
+   }
+
+   @Override
+   public String toString() {
+      return "\nCar{brand='" + brand + "', color='" + color + "', serialNumber='" + serialNumber + "'}\n";
    }
 
 
