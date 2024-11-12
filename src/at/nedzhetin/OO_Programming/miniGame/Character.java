@@ -36,4 +36,13 @@ public class Character {
     public void takeDamage(int hp,int damage) {
         this.hp = this.hp-damage;
     }
+
+    public void heal(){
+        this.hp = this.hp+10;
+    }
+
+    @Override
+    public String toString() {
+        return "name" + name;
+    }
 }
