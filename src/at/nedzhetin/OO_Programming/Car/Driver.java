@@ -1,13 +1,15 @@
-package at.nedzhetin.OO_Programming;
+package at.nedzhetin.OO_Programming.Car;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Driver {
     private String name;
     private int age;
     private String gender;
-    private List<Car> Cars = new ArrayList<Car>();
+    private List<Car> cars = new ArrayList<Car>();
+
 
     public Driver(String name, int age, String gender) {
         this.name = name;
@@ -15,13 +17,38 @@ public class Driver {
         this.gender = gender;
     }
 
+    Scanner scanner = new Scanner(System.in);
+
     public List<Car> pushCar(Car car) {
-        Cars.add(car);
+        cars.add(car);
         return null;
     }
 
     public List<Car> getCars() {
-        return Cars;
+        return cars;
+    }
+
+    public void printAllCarInfo() {
+
+        if (!cars.isEmpty()) {
+            for (Car car : cars) {
+                car.giveCarInfo();
+            }
+        } else{
+           System.out.println("No car available");
+        }
+    }
+
+    public void deleteCar() {
+        if (!cars.isEmpty()) {
+            printAllCarInfo();
+            System.out.println("Type the serial Number of the Car you want to delete");
+            String serialNumber = scanner.next();
+            cars.removeIf(car -> car.getSerialNumber().equals(serialNumber));
+        }else {
+            System.out.println("No car available");
+        }
+
     }
 
 

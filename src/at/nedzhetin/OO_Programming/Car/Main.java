@@ -1,5 +1,4 @@
-package at.nedzhetin.OO_Programming;
-import org.w3c.dom.ls.LSOutput;
+package at.nedzhetin.OO_Programming.Car;
 
 import java.util.Scanner;
 
@@ -15,7 +14,6 @@ public class Main {
         boolean isFinished = false;
 
 
-
         while (!isFinished) {
 
             System.out.print("\n1.New Car\t\t");
@@ -24,18 +22,23 @@ public class Main {
             System.out.print("4.Honk\t\t");
             System.out.print("5.Give car info\t\t");
             System.out.print("6.Give Engine info\t\t");
-            System.out.print("7.Quit\t\t");
+            System.out.print("7.Delete Car\t\t");
+            System.out.print("8.Quit\t\t");
             int selection = scanner.nextInt();
 
             if (selection == 1) {
                 c1 = new Car();
-                System.out.println("Brand:");
-                String newBrand = scanner.next();
-                c1.setBrand(newBrand);
+                for (int i = 0; i < Car.Brand.values().length; i++) {
+                    System.out.println(i+1 + "." + Car.Brand.values()[i]);
+                }
+                int newBrand =  scanner.nextInt();
+                c1.setBrand(Car.Brand.valueOf(newBrand));
 
-                System.out.println("Color:");
-                String newColor = scanner.next();
-                c1.setColor(newColor);
+                for (int i = 0; i < Car.Color.values().length; i++) {
+                    System.out.println(i+1 + "." + Car.Color.values()[i]);
+                }
+                int newColor = scanner.nextInt();
+                c1.setColor(Car.Color.valueOf(newColor));
 
 
                 System.out.println("Serial Number:");
@@ -54,47 +57,37 @@ public class Main {
 
                 if (c1 != null) {
                     c1.getEngine().drive();
-                }else{
+                } else {
                     System.out.println("you dont have a car");
                 }
 
             }
             if (selection == 3) {
-                if (c1 != null){
-                    c1.getRemainingRange();
-                }else{
-                    System.out.println("you dont have a car");
-                }
-
+                c1.getRemainingRange();
             }
-            if (selection == 4) {
-                if (c1 != null){
-                    c1.honk(3);
-                }else{
-                    System.out.println("you dont have a car");
-                }
 
+            if (selection == 4) {
+                c1.honk(3);
             }
 
             if (selection == 5) {
-                if (c1 != null){
-                    c1.giveCarInfo();
-                }else{
-                    System.out.println("you dont have a car");
-                }
-
-
+                d1.printAllCarInfo();
             }
 
             if (selection == 6) {
                 if (c1 != null) {
-                  c1.getEngine().giveEngineInfo();
+                    c1.getEngine().giveEngineInfo();
                 } else {
-                    System.out.println("you don't have a car");
+                    System.out.println("you dont have a car");
                 }
 
             }
+
             if (selection == 7) {
+                d1.deleteCar();
+            }
+
+            if (selection == 8) {
                 isFinished = true;
             }
         }
