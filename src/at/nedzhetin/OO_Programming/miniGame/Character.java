@@ -8,8 +8,9 @@ public class Character {
     private final String specialty;
     public  int hp;
     SpecialAbility ability;
+    Weapon weapon;
 
-    public Character(String name, int age, String gender, String description, String specialty, int hp, SpecialAbility ability) {
+    public Character(String name, int age, String gender, String description, String specialty, int hp, SpecialAbility ability,Weapon weapon) {
         this.name = name;
         this.age = age;
         this.gender = gender;
@@ -17,6 +18,7 @@ public class Character {
         this.specialty = specialty;
         this.hp = hp;
         this.ability = ability;
+        this.weapon = weapon;
     }
 
     public void display() {
@@ -27,6 +29,14 @@ public class Character {
         System.out.println("Specialty:\t\t" + specialty);
         System.out.println("HP:\t\t\t\t" + hp+ "\n");
 
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+    public String getSpecialty() {
+        return specialty;
     }
 
     public void displayHp(){

@@ -1,6 +1,24 @@
 package at.nedzhetin.OO_Programming.miniGame;
 
-public interface SpecialAbility {
+public class SpecialAbility {
+   private String abilityName;
+  private int abilityDamage;
 
-    void useAbility(Character enemy);
+  public SpecialAbility(String abilityName, int abilityDamage) {
+      this.abilityName = abilityName;
+      this.abilityDamage = abilityDamage;
+  }
+
+    public int getAbilityDamage() {
+        return abilityDamage;
+    }
+
+    public String getAbilityName() {
+        return abilityName;
+    }
+
+    public void useAbility(Character enemy) {
+        enemy.takeDamage(enemy.hp,abilityDamage);
+    }
+
 }
