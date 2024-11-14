@@ -131,17 +131,23 @@ public class Game {
                     playerTwo.displayHp();
                     System.out.println("\n\n");
                     if (currentPlayer == playerOne) {
+                        if (rounds == 0){
+                            playerOne.weapon.buffWeapon(playerOne);
+                        }
                         System.out.println("PLAYER 1:\n");
                         System.out.println("1." + playerOne.ability.getAbilityName() + "(" + playerOne.ability.getAbilityDamage() + " Damage)");
-                        System.out.println("2." + playerOne.weapon.getName() + "(" + playerOne.weapon.getDamage() + " Damage)");
+                        System.out.println("2." + playerOne.weapon.getName() + "(" + playerOne.weapon.getDamage() +" Damage) " + playerOne.weapon.displayBuffs(playerOne)+"% Buff included");
                         System.out.println("3.heal");
-                        playerOne.weapon.displayBuffs(playerOne);
+
                     } else {
+                        if (rounds == 1){
+                            playerTwo.weapon.buffWeapon(playerTwo);
+                        }
                         System.out.println("PLAYER 2:\n");
                         System.out.println("1." + playerTwo.ability.getAbilityName() + "(" + playerTwo.ability.getAbilityDamage() + " Damage)");
-                        System.out.println("2." + playerTwo.weapon.getName() + "(" + playerTwo.weapon.getDamage() + " Damage)");
+                        System.out.println("2." + playerTwo.weapon.getName() + "(" + playerTwo.weapon.getDamage() +" Damage) " + playerTwo.weapon.displayBuffs(playerTwo)+"% Buff included");
                         System.out.println("3.heal");
-                        playerTwo.weapon.displayBuffs(playerTwo);
+
                     }
 
 
