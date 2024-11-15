@@ -2,23 +2,26 @@ package at.nedzhetin.OO_Programming.miniGame;
 
 public class SpecialAbility {
    private String abilityName;
-  private int abilityDamage;
+   private String info;
 
-  public SpecialAbility(String abilityName, int abilityDamage) {
+
+  public SpecialAbility(String abilityName, String info) {
       this.abilityName = abilityName;
-      this.abilityDamage = abilityDamage;
+      this.info = info;
   }
 
-    public int getAbilityDamage() {
-        return abilityDamage;
-    }
 
     public String getAbilityName() {
         return abilityName;
     }
 
-    public void useAbility(Character enemy) {
-        enemy.takeDamage(enemy.hp,abilityDamage);
+    public String getInfo() {
+      return info;
     }
+
+    public void useAbility(Character enemy) {
+        System.out.println("hello");
+    }
+
 
 }

@@ -11,19 +11,23 @@ public class Game {
     private Character playerTwo = null;
     private Character currentPlayer;
     private Character opponentPlayer;
-    private int rounds = 0;
-
+    public int rounds = 0;
     private int selection;
     List<Character> characters = new ArrayList<Character>();
     List<Weapon> weapons = new ArrayList<Weapon>();
 
+
     public void runGame() {
 
         Weapon defaultWeapon = new Weapon("default Weapon", 0, "none");
-         SpecialAbility fireBall = new SpecialAbility("Fire Ball", 12);
+
+         SpecialAbility fireBall = new OffensiveAbility("Fire Ball","12 Damage",12);
+         SpecialAbility iceWall = new DefensiveAbility("Ice Wall","immune for the next 2 rounds");
 
         Character fireMan = new Character("FireMan", 18, "male", "He is cool", "fire", 100, fireBall, defaultWeapon);
-        Character iceMan = new Character("IceMan", 25, "male", "he is cold", "ice", 100, fireBall, defaultWeapon);
+        Character iceMan = new Character("IceMan", 25, "male", "he is cold", "ice", 100, iceWall, defaultWeapon);
+        Character thunderMage = new Character("ThunderMage", 84, "female", "Wields the power of storms, agile but fragile", "lightning", 100, fireBall, defaultWeapon);
+
 
         Weapon fireAxe = new Weapon("fire Axe", 8, "fire");
         Weapon iceSword = new Weapon("ice Sword", 5, "ice");
@@ -45,16 +49,11 @@ public class Game {
                 iceMan.display();
                 selection = sc.nextInt();
 
-                switch (selection) {
-                    case 1:
-                        playerOne = characters.get(0);
-                        break;
-                    case 2:
-                        playerOne = characters.get(1);
-                        break;
-                    default:
-                        System.out.println("Invalid selection. Please choose 1 or 2.");
 
+                if (selection -1 < 0 || selection -1 >= characters.size()) {
+                    System.out.println("Invalid selection. Please choose 1 or 2.");
+                }else{
+                    playerOne = characters.get(selection - 1);
                 }
 
                 System.out.println("Player1 Choose your Weapon:");
@@ -82,16 +81,14 @@ public class Game {
             } else if (playerTwo == null) {
                 System.out.println("Player2 Choose your Character:");
                 selection = sc.nextInt();
-                switch (selection) {
-                    case 1:
-                        playerTwo = characters.get(0);
-                        break;
-                    case 2:
-                        playerTwo = characters.get(1);
-                        break;
-                    default:
-                        System.out.print("Invalid selection. Please choose 1 or 2.");
+
+
+                if (selection -1 < 0 || selection -1 >= characters.size()) {
+                    System.out.println("Invalid selection. Please choose 1 or 2.");
+                }else{
+                    playerTwo = characters.get(selection - 1);
                 }
+
 
                         System.out.println("Player2 Choose your Weapon:");
                         System.out.println("1: ");
@@ -121,6 +118,7 @@ public class Game {
                 while (playerOne != null || playerTwo != null) {
 
                     if (rounds == 0) {
+
                         this.currentPlayer = this.playerOne;
                         this.opponentPlayer = this.playerTwo;
                     }
@@ -135,7 +133,7 @@ public class Game {
                             playerOne.weapon.buffWeapon(playerOne);
                         }
                         System.out.println("PLAYER 1:\n");
-                        System.out.println("1." + playerOne.ability.getAbilityName() + "(" + playerOne.ability.getAbilityDamage() + " Damage)");
+                        System.out.println("1." + playerOne.ability.getAbilityName() + "(" + playerOne.ability.getInfo() + ")");
                         System.out.println("2." + playerOne.weapon.getName() + "(" + playerOne.weapon.getDamage() +" Damage) " + playerOne.weapon.displayBuffs(playerOne)+"% Buff included");
                         System.out.println("3.heal");
 
@@ -144,7 +142,7 @@ public class Game {
                             playerTwo.weapon.buffWeapon(playerTwo);
                         }
                         System.out.println("PLAYER 2:\n");
-                        System.out.println("1." + playerTwo.ability.getAbilityName() + "(" + playerTwo.ability.getAbilityDamage() + " Damage)");
+                        System.out.println("1." + playerTwo.ability.getAbilityName() + "(" + playerTwo.ability.getInfo() + ")");
                         System.out.println("2." + playerTwo.weapon.getName() + "(" + playerTwo.weapon.getDamage() +" Damage) " + playerTwo.weapon.displayBuffs(playerTwo)+"% Buff included");
                         System.out.println("3.heal");
 
@@ -176,6 +174,5 @@ public class Game {
             }
         }
     }
-
 
 }

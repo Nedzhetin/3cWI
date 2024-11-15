@@ -5,12 +5,18 @@ public class Weapon {
     private int damage;
     public String type;
     private int damageBuff;
+    private int nerfDuration = -1;
+
+
+
+
 
     public Weapon(String name, int damage, String type) {
         this.name = name;
         this.damage = damage;
         this.type = type;
     }
+
 
     public void display() {
         System.out.println("Name:\t\t" + name);
@@ -23,7 +29,11 @@ public class Weapon {
     }
 
     public int getDamage() {
-        return damage;
+        if (nerfDuration >= 0){
+            return 0;
+        }else {
+            return damage;
+        }
     }
 
 
@@ -54,6 +64,22 @@ public class Weapon {
     }
 
     public void useWeapon(Character enemy) {
-        enemy.takeDamage(enemy.hp, this.damage);
+        if (nerfDuration >= 0){
+            nerfDuration--;
+        }else {
+            enemy.takeDamage(enemy.hp, this.damage);
+        }
+
     }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+
+    public void setNerfDuration(int nerfDuration) {
+        this.nerfDuration = nerfDuration;
+    }
+
+
 }
