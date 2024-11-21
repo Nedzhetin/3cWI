@@ -26,7 +26,7 @@ public class Game {
 
         Character fireMan = new Character("FireMan", 18, "male", "He is cool", "fire", 100, fireBall, defaultWeapon);
         Character iceMan = new Character("IceMan", 25, "male", "he is cold", "ice", 100, iceWall, defaultWeapon);
-        Character thunderMage = new Character("ThunderMage", 84, "female", "Wields the power of storms, agile but fragile", "lightning", 100, fireBall, defaultWeapon);
+        //Character thunderMage = new Character("ThunderMage", 84, "female", "Wields the power of storms, agile but fragile", "lightning", 100, fireBall, defaultWeapon);
 
 
         Weapon fireAxe = new Weapon("fire Axe", 8, "fire");
