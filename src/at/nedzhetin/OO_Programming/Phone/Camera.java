@@ -6,4 +6,8 @@ public class Camera {
     public Camera(String resolution) {
         this.resolution = resolution;
     }
+
+    public void makePicture() {
+        System.out.println("taking picture");
+    }
 }

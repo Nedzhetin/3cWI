@@ -138,5 +138,4 @@ public class Car {
       return "\nCar{brand='" + brand + "', color='" + color + "', serialNumber='" + serialNumber + "'}\n";
    }
 
-
 }

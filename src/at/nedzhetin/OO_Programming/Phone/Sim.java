@@ -9,5 +9,8 @@ public class Sim {
         this.number = number;
     }
 
+    public void doCall(){
+        System.out.println("Your are calling someone right know");
+    }
 
 }
